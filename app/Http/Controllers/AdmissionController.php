@@ -40,7 +40,7 @@ class AdmissionController extends Controller
     return response()->json($admission);
     }
 
-    public function indexTest()
+    public function indexTestCI()
     {
     $admission = Admission::with('dossierMedical.patient','service','salle')
     ->orderBy('id', 'DESC')
