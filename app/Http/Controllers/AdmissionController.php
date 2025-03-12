@@ -40,6 +40,14 @@ class AdmissionController extends Controller
     return response()->json($admission);
     }
 
+    public function indexTest()
+    {
+    $admission = Admission::with('dossierMedical.patient','service','salle')
+    ->orderBy('id', 'DESC')
+    ->get();
+    return response()->json($admission);
+    }
+
     /**
      * @OA\Post(
      *     path="/api/admissions/en-cours",
